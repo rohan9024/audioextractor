@@ -26,7 +26,12 @@ def build_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument("source", type=Path)
     parser.add_argument("-o", "--output", type=Path)
-    parser.add_argument("-f", "--format", default="wav", choices=["wav", "mp3", "flac", "ogg", "m4a"])
+    parser.add_argument(
+    "-f",
+    "--format",
+    default="wav",
+    choices=["wav", "mp3", "flac", "ogg", "m4a"],
+    )
     parser.add_argument("--sample-rate", type=int, default=16000)
     parser.add_argument("--channels", type=int, default=1)
     parser.add_argument("--timeout", type=float, default=300.0)

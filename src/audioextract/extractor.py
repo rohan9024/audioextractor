@@ -2,13 +2,10 @@
 from __future__ import annotations
 
 import asyncio
-import os
 import threading
 import time
-from collections.abc import Callable
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any
 
 from ._utils import (
     atomic_replace,
@@ -21,7 +18,7 @@ from ._utils import (
 from .constants import CODECS, DEFAULT_CHANNELS, DEFAULT_SAMPLE_RATE
 from .exceptions import AudioExtractError, OutputExistsError
 from .limits import enforce_limits
-from .models import ExtractionOptions, ExtractionResult, MediaInfo, ProgressUpdate
+from .models import ExtractionOptions, ExtractionResult, MediaInfo
 from .probing import probe_media
 from .process import AsyncProgressCallback, ProgressCallback, run_ffmpeg_async, run_ffmpeg_sync
 
